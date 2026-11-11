@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="English Quest adalah permainan edukasi Bahasa Inggris untuk pemula dengan vocabulary, grammar, reading, word builder, tantangan harian, dan sistem penghargaan.">
+<meta name="author" content="English Quest Studio">
+<meta name="theme-color" content="#2457A7">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="English Quest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta property="og:type" content="game">
+<meta property="og:title" content="English Quest">
+<meta property="og:description" content="Petualangan belajar Bahasa Inggris melalui lima permainan seru.">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="English Quest">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="English Quest">
+<meta name="twitter:description" content="Belajar Bahasa Inggris sambil bermain.">
+<title>English Quest — Petualangan Bahasa Inggris</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232457A7'/%3E%3Ctext x='50' y='69' font-size='60' text-anchor='middle'%3E%E2%AD%90%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+ --blue:#2457A7;
+ --blue-dark:#193C76;
+ --yellow:#F6C945;
+ --cream:#FFF4DD;
+ --paper:#FFFCF5;
+ --ink:#26364B;
+ --muted:#64748B;
+ --green:#27845D;
+ --red:#B84343;
+ --line:#D8CDB8;
+ --shadow:0 5px 0 rgba(36,54,75,.14);
+ --radius:18px;
+}
+*{box-sizing:border-box}
+html{min-height:100%;-webkit-text-size-adjust:100%;scroll-behavior:smooth;overscroll-behavior:none}
+body{
+ margin:0;background:var(--cream);color:var(--ink);
+ font-family:"Trebuchet MS",Verdana,sans-serif;font-size:16px;
+ line-height:1.5;min-height:100vh;min-height:100dvh;
+ touch-action:manipulation;
+}
+button,input{font:inherit}
+button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button:focus-visible,input:focus-visible{outline:3px solid #C27A16;outline-offset:3px}
+input{font-size:16px;max-width:100%;user-select:text;-webkit-user-select:text}
+button:disabled{opacity:.48;cursor:not-allowed;transform:none!important}
+svg{width:22px;height:22px;vertical-align:middle}
+.topbar{
+ background:var(--blue);color:var(--paper);padding:12px max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left));
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ position:sticky;top:0;z-index:5;border-bottom:5px solid var(--yellow);
+}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-mark{font-size:29px}
+.brand h1{font-family:Georgia,serif;font-size:clamp(19px,4vw,25px);margin:0;line-height:1.1}
+.brand small{display:block;color:#E9E5D9;font-size:12px}
+.top-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{width:44px;height:44px;border:2px solid #FFFFFF70;background:#FFFFFF18;color:white;border-radius:12px}
+.icon-btn:hover{background:#FFFFFF32}
+.shell{width:min(1120px,100%);margin:auto;padding:22px 20px calc(34px + env(safe-area-inset-bottom))}
+.hero{
+ background:var(--blue);color:white;border-radius:24px;padding:clamp(22px,5vw,42px);
+ display:grid;grid-template-columns:1.35fr .65fr;align-items:center;gap:18px;
+ box-shadow:0 7px 0 var(--blue-dark);position:relative;overflow:hidden;
+}
+.hero h2{font: bold clamp(32px,6vw,55px)/1.08 Georgia,serif;letter-spacing:-1.7px;margin:0 0 14px}
+.hero p{max-width:470px;color:#F3EBD9;margin:0 0 22px}
+.hero-art{text-align:center;font-size:clamp(70px,13vw,125px);transform:rotate(-6deg)}
+.eyebrow{font-size:12px;letter-spacing:1.7px;text-transform:uppercase;font-weight:bold;color:#F6C945}
+.btn{
+ border:2px solid var(--ink);background:var(--yellow);color:var(--ink);
+ padding:12px 18px;min-height:48px;border-radius:12px;font-weight:bold;
+ box-shadow:0 4px 0 var(--ink);transition:transform .13s,box-shadow .13s;
+}
+.btn:hover{background:#FFDB69;transform:translateY(-2px);box-shadow:0 6px 0 var(--ink)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+.btn-blue{background:var(--blue);color:white;border-color:var(--blue-dark);box-shadow:0 4px 0 var(--blue-dark)}
+.btn-blue:hover{background:#3269BA}
+.btn-light{background:var(--paper);box-shadow:0 4px 0 var(--line);border-color:var(--line)}
+.btn-red{background:#F2C5BB;border-color:#8D4137;box-shadow:0 4px 0 #8D4137}
+.btn-green{background:#BDE7CD;border-color:#27754E;box-shadow:0 4px 0 #27754E}
+.btn-small{min-height:40px;padding:8px 12px;font-size:14px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:32px 0 14px}
+.section-head h2{font: bold clamp(23px,4vw,30px) Georgia,serif;margin:0}
+.section-head p{margin:3px 0 0;color:var(--muted);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.stat{background:var(--paper);border:2px solid var(--line);border-radius:15px;padding:14px;box-shadow:var(--shadow)}
+.stat strong{display:block;font: bold 27px Georgia,serif;color:var(--blue)}
+.stat span{font-size:13px;color:var(--muted)}
+.game-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.game-card{
+ display:flex;align-items:center;gap:15px;text-align:left;width:100%;
+ background:var(--paper);border:2px solid var(--ink);border-radius:17px;
+ padding:17px;box-shadow:var(--shadow);color:var(--ink);min-height:112px;
+ transition:transform .15s;
+}
+.game-card:hover{transform:translateY(-3px)}
+.game-icon{width:65px;height:65px;flex:0 0 65px;display:grid;place-items:center;background:var(--cream);border:2px solid var(--line);border-radius:16px;font-size:34px}
+.game-card strong{display:block;font: bold 19px Georgia,serif}
+.game-card small{display:block;color:var(--muted);margin-top:4px}
+.tag{display:inline-block;font-size:11px;background:#F8E6A6;padding:3px 8px;border-radius:20px;font-weight:bold;margin-top:7px}
+.navbar{
+ position:fixed;bottom:0;left:0;right:0;z-index:8;
+ background:var(--paper);border-top:2px solid var(--line);
+ display:flex;justify-content:center;gap:0;
+ padding:7px 5px max(7px,env(safe-area-inset-bottom));
+}
+.nav-btn{background:transparent;border:0;color:var(--muted);flex:1;max-width:160px;min-height:52px;border-radius:12px;font-size:12px;font-weight:bold}
+.nav-btn span{display:block;font-size:21px;line-height:1.2}
+.nav-btn.active{background:#E6EDFA;color:var(--blue)}
+.content-panel{background:var(--paper);border:2px solid var(--line);border-radius:20px;padding:clamp(17px,4vw,28px);box-shadow:var(--shadow)}
+.page-title{font: bold clamp(27px,5vw,38px) Georgia,serif;margin:0 0 6px}
+.subtext{color:var(--muted);margin:0 0 20px}
+.back-btn{background:none;border:0;color:var(--blue);font-weight:bold;padding:8px 0;margin-bottom:12px;min-height:44px}
+.lesson{background:#F6EDCF;border:2px solid #D8BD6C;border-radius:15px;padding:17px;margin:16px 0}
+.lesson h3{margin:0 0 7px;font: bold 21px Georgia,serif}
+.lesson p{margin:5px 0}
+.example{background:white;border-left:4px solid var(--blue);padding:10px 12px;margin:8px 0;border-radius:5px}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pill{background:#E5ECF8;padding:7px 12px;border-radius:30px;font-weight:bold;color:var(--blue);font-size:14px}
+.progress{height:12px;background:#E9E1D1;border-radius:30px;overflow:hidden;margin:15px 0}
+.progress-fill{height:100%;width:0;background:var(--green);transition:width .2s}
+.question{font: bold clamp(22px,4vw,31px) Georgia,serif;text-align:center;margin:24px 0 15px}
+.question-visual{font-size:76px;text-align:center;line-height:1.3;margin:10px}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.option{
+ min-height:58px;background:white;border:2px solid var(--line);border-radius:13px;
+ font-weight:bold;color:var(--ink);padding:12px;
+}
+.option:hover{border-color:var(--blue);background:#EDF2FB}
+.option.correct{background:#CBEBD5;border-color:var(--green)}
+.option.wrong{background:#F8D5CC;border-color:var(--red)}
+.feedback{padding:13px;border-radius:12px;margin:14px 0;font-weight:bold}
+.feedback.good{background:#D8F0DF;color:#185A3C}
+.feedback.bad{background:#F8DED7;color:#87352B}
+.letter-row,.word-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0}
+.letter{width:46px;height:48px;background:#F8E6A6;border:2px solid #A78629;border-radius:10px;font-weight:bold;font-size:20px}
+.word-chip{background:#E5ECF8;border:2px solid var(--blue);border-radius:10px;padding:10px 13px;font-weight:bold;min-height:44px}
+.timer{font: bold 23px Georgia,serif;color:var(--red)}
+.reading{font:19px/1.8 Georgia,serif;background:#F8F0DB;border-radius:13px;padding:18px;border:1px solid #D8CDB8}
+.profile-box{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.avatar{width:84px;height:84px;background:#F8E6A6;border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:45px}
+.field{width:100%;padding:12px;border:2px solid var(--line);border-radius:10px;background:white;margin:6px 0 12px}
+.field-label{font-weight:bold;display:block}
+.badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge-item{background:#F6EDCF;border:2px solid #D8BD6C;border-radius:13px;padding:12px;text-align:center;min-width:100px}
+.badge-item span{font-size:28px;display:block}
+.badge-item small{font-weight:bold}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px 8px;text-align:left;border-bottom:1px solid var(--line)}
+.table th{color:var(--muted);font-size:13px}
+.empty{padding:25px;text-align:center;color:var(--muted);background:#F8F0DB;border-radius:14px}
+.notice{padding:13px;border:1px solid #D8BD6C;background:#FFF1BF;border-radius:12px;margin:12px 0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.modal{
+ position:fixed;inset:0;z-index:20;background:#192D4BCC;
+ display:flex;align-items:center;justify-content:center;padding:18px;
+}
+.modal-box{width:min(460px,100%);background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:25px;box-shadow:0 8px 0 #14294D;max-height:90dvh;overflow:auto}
+.modal-box h2{font: bold 28px Georgia,serif;margin:0 0 10px}
+.hidden{display:none!important}
+footer{text-align:center;padding:25px 0 95px;color:var(--muted);font-size:13px}
+.toast{position:fixed;z-index:30;bottom:90px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:12px;max-width:90%;text-align:center;box-shadow:var(--shadow)}
+.onboard-list{padding-left:22px}
+.onboard-list li{margin:10px 0}
+#app{min-height:60vh;animation:appear .3s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){
+ .shell{padding:16px 14px 20px}
+ .hero{grid-template-columns:1fr;gap:0}
+ .hero-art{position:absolute;right:8px;bottom:0;opacity:.19;font-size:100px;pointer-events:none}
+ .hero>div:first-child{position:relative;z-index:1}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .game-grid{grid-template-columns:1fr}
+ .game-card{min-height:92px;padding:13px}
+ .game-icon{width:54px;height:54px;flex-basis:54px;font-size:29px}
+ .options{grid-template-columns:1fr 1fr;gap:8px}
+ .option{font-size:15px;padding:9px 5px}
+ .content-panel{padding:17px}
+ .navbar{justify-content:space-around}
+ .nav-btn{font-size:11px}
+}
+@media(min-width:601px) and (max-width:900px){
+ .game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1200px){
+ .shell{padding-top:32px}
+ .hero{min-height:275px}
+}
+@media(orientation:landscape) and (max-height:550px){
+ .shell{padding-top:12px}
+ .hero{grid-template-columns:1fr .4fr;padding:18px}
+ .hero h2{font-size:32px}
+ .navbar{position:relative;border:2px solid var(--line);border-radius:15px;margin:15px auto;max-width:700px}
+ footer{padding-bottom:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="brand">
+  <span class="brand-mark" aria-hidden="true">⭐</span>
+  <div><h1>English Quest</h1><small>Petualangan Bahasa Inggris</small></div>
+ </div>
+ <div class="top-actions">
+  <button class="icon-btn" id="soundBtn" aria-label="Aktifkan atau matikan suara">🔊</button>
+  <button class="icon-btn" id="helpBtn" aria-label="Petunjuk penggunaan">❔</button>
+ </div>
+</header>
+
+<main class="shell">
+ <div id="app" aria-live="polite">
+  <div class="empty">Menyiapkan permainan...</div>
+ </div>
+ <footer>⭐ English Quest · Belajar sedikit, berlatih setiap hari.</footer>
+</main>
+
+<nav class="navbar" aria-label="Navigasi utama">
+ <button class="nav-btn active" data-page="home"><span>🏠</span>Beranda</button>
+ <button class="nav-btn" data-page="learn"><span>📚</span>Belajar</button>
+ <button class="nav-btn" data-page="games"><span>🎮</span>Main Game</button>
+ <button class="nav-btn" data-page="ranking"><span>🏆</span>Ranking</button>
+ <button class="nav-btn" data-page="profile"><span>👤</span>Profil</button>
+</nav>
+
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-box" id="modalContent"></div>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+
+<script>
+"use strict";
+
+/* =========================================
+   ENGLISH QUEST — DATA DAN KONFIGURASI
+========================================= */
+const STORAGE_KEY = "app_v1_state";
+const DAY = 86400000;
+
+const VOCAB = [
+ {category:"Warna",items:[
+  ["🔴","Red","Merah"],["🔵","Blue","Biru"],["🟡","Yellow","Kuning"],
+  ["🟢","Green","Hijau"],["⚫","Black","Hitam"],["⚪","White","Putih"],
+  ["🟠","Orange","Oranye"],["🟣","Purple","Ungu"]
+ ]},
+ {category:"Angka",items:[
+  ["1️⃣","One","Satu"],["2️⃣","Two","Dua"],["3️⃣","Three","Tiga"],
+  ["4️⃣","Four","Empat"],["5️⃣","Five","Lima"],["6️⃣","Six","Enam"],
+  ["7️⃣","Seven","Tujuh"],["8️⃣","Eight","Delapan"],["9️⃣","Nine","Sembilan"],
+  ["🔟","Ten","Sepuluh"]
+ ]},
+ {category:"Hewan",items:[
+  ["🐱","Cat","Kucing"],["🐶","Dog","Anjing"],["🐘","Elephant","Gajah"],
+  ["🦁","Lion","Singa"],["🐦","Bird","Burung"],["🐟","Fish","Ikan"],
+  ["🐰","Rabbit","Kelinci"],["🐵","Monkey","Monyet"]
+ ]},
+ {category:"Benda di Rumah",items:[
+  ["🪑","Chair","Kursi"],["🛏️","Bed","Tempat tidur"],["🚪","Door","Pintu"],
+  ["🪟","Window","Jendela"],["🪞","Mirror","Cermin"],["🛋️","Sofa","Sofa"],
+  ["💡","Lamp","Lampu"],["🧊","Refrigerator","Kulkas"]
+ ]},
+ {category:"Sekolah",items:[
+  ["📚","Book","Buku"],["✏️","Pencil","Pensil"],["🎒","Bag","Tas"],
+  ["📏","Ruler","Penggaris"],["🖊️","Pen","Pulpen"],["🧹","Broom","Sapu"],
+  ["🪑","Desk","Meja belajar"],["✂️","Scissors","Gunting"]
+ ]}
+];
+
+const GRAMMAR = [
+ {topic:"To Be",q:"She ___ a teacher.",a:["am","is","are","be"],correct:1,why:"She menggunakan is. Jadi: She is a teacher."},
+ {topic:"To Be",q:"They ___ happy.",a:["is","am","are","be"],correct:2,why:"They menggunakan are. Jadi: They are happy."},
+ {topic:"To Be",q:"I ___ a student.",a:["am","is","are","be"],correct:0,why:"I selalu menggunakan am."},
+ {topic:"Simple Present",q:"He ___ to school every day.",a:["go","goes","going","went"],correct:1,why:"He adalah subjek tunggal. Kata kerja mendapat akhiran -s/-es."},
+ {topic:"Simple Present",q:"I ___ milk every morning.",a:["drinks","drank","drink","drinking"],correct:2,why:"Subjek I menggunakan kata kerja dasar: drink."},
+ {topic:"Simple Present",q:"She ___ English on Mondays.",a:["study","studies","studied","studying"],correct:1,why:"Study berubah menjadi studies untuk she dalam Simple Present."},
+ {topic:"Simple Past",q:"Yesterday, we ___ football.",a:["play","plays","played","playing"],correct:2,why:"Yesterday menunjukkan masa lampau. Play berubah menjadi played."},
+ {topic:"Simple Past",q:"He ___ a cake last night.",a:["make","makes","made","making"],correct:2,why:"Make adalah kata kerja tidak beraturan. Bentuk lampau: made."},
+ {topic:"Simple Past",q:"I ___ to the market yesterday.",a:["go","went","goes","going"],correct:1,why:"Bentuk lampau dari go adalah went."},
+ {topic:"Plural",q:"One cat, two ___.",a:["cat","cats","cates","caties"],correct:1,why:"Kebanyakan kata benda mendapat tambahan -s untuk bentuk jamak."},
+ {topic:"Plural",q:"One child, two ___.",a:["childs","childes","children","child"],correct:2,why:"Children adalah bentuk jamak tidak beraturan dari child."},
+ {topic:"Plural",q:"One box, three ___.",a:["boxs","boxes","boxies","box"],correct:1,why:"Kata benda berakhiran x umumnya mendapat tambahan -es."},
+ {topic:"Preposition",q:"The book is ___ the table.",a:["on","under","between","behind"],correct:0,why:"On berarti di atas permukaan sesuatu."},
+ {topic:"Preposition",q:"The cat is ___ the chair.",a:["in","under","at","on"],correct:1,why:"Under berarti di bawah."},
+ {topic:"Preposition",q:"The school is ___ the bank and the shop.",a:["on","in","between","at"],correct:2,why:"Between berarti di antara dua tempat."}
+];
+
+const STORIES = [
+ {
+ title:"Mia's Little Cat",
+ text:"Mia has a little cat. Its name is Milo. Milo likes to drink milk. Every morning, they play in the garden.",
+ questions:[
+  {q:"What is the cat's name?",a:["Milo","Max","Mia"],correct:0,why:"The cat's name is Milo."},
+  {q:"What does Milo like to drink?",a:["Water","Milk","Juice"],correct:1,why:"Milo likes to drink milk."},
+  {q:"Where do they play?",a:["In the garden","At school","In the kitchen"],correct:0,why:"They play in the garden."}
+ ]
+ },
+ {
+ title:"A Day at School",
+ text:"Tom wakes up at six o'clock. He eats bread for breakfast. He goes to school by bicycle. He studies English with his friends.",
+ questions:[
+  {q:"When does Tom wake up?",a:["At five","At six","At seven"],correct:1,why:"Tom wakes up at six o'clock."},
+  {q:"What does Tom eat?",a:["Rice","Eggs","Bread"],correct:2,why:"He eats bread for breakfast."},
+  {q:"How does he go to school?",a:["By car","By bicycle","By bus"],correct:1,why:"He goes to school by bicycle."}
+ ]
+ },
+ {
+ title:"The Happy Garden",
+ text:"Anna has a beautiful garden. There are three red flowers. A yellow butterfly flies over the flowers. Anna waters the plants every afternoon.",
+ questions:[
+  {q:"Who has a garden?",a:["Anna","Mia","Tom"],correct:0,why:"Anna has a beautiful garden."},
+  {q:"How many red flowers are there?",a:["Two","Three","Four"],correct:1,why:"There are three red flowers."},
+  {q:"What color is the butterfly?",a:["Blue","Green","Yellow"],correct:2,why:"The butterfly is yellow."}
+ ]
+ }
+];
+
+const SENTENCES = [
+ {scramble:["is","She","happy"],answer:["She","is","happy"],meaning:"Dia perempuan bahagia."},
+ {scramble:["a","I","student","am"],answer:["I","am","a","student"],meaning:"Saya seorang siswa."},
+ {scramble:["football","play","They"],answer:["They","play","football"],meaning:"Mereka bermain sepak bola."},
+ {scramble:["likes","He","apples"],answer:["He","likes","apples"],meaning:"Dia laki-laki menyukai apel."},
+ {scramble:["reading","is","She"],answer:["She","is","reading"],meaning:"Dia perempuan sedang membaca."},
+ {scramble:["the","on","book","table","is","The"],answer:["The","book","is","on","the","table"],meaning:"Buku itu berada di atas meja."}
+];
+
+const WORDS = [
+ {word:"APPLE",hint:"Buah berwarna merah atau hijau",meaning:"Apel"},
+ {word:"HOUSE",hint:"Tempat tinggal keluarga",meaning:"Rumah"},
+ {word:"SCHOOL",hint:"Tempat untuk belajar",meaning:"Sekolah"},
+ {word:"FRIEND",hint:"Orang yang bersahabat denganmu",meaning:"Teman"},
+ {word:"ORANGE",hint:"Buah yang juga merupakan nama warna",meaning:"Jeruk"},
+ {word:"GARDEN",hint:"Tempat menanam bunga",meaning:"Taman"},
+ {word:"PENCIL",hint:"Alat untuk menulis dan menggambar",meaning:"Pensil"}
+];
+
+const DEFAULT_STATE = {
+ version:1,name:"Pemain Hebat",points:0,hearts:5,streak:0,
+ lastDay:"",dailyDate:"",daily:{vocab:0,grammar:0,reading:0},
+ completed:{},badges:[],history:[],sound:true,
+ best:0,onboarded:false,level:1
+};
+
+let state=loadState();
+let page="home";
+let mode=null;
+let gameData=null;
+let timerId=null;
+let toastId=null;
+let audioContext=null;
+let lastFocus=null;
+let menuOpen=false;
+
+/* =========================================
+   PENYIMPANAN DAN UTILITAS
+========================================= */
+function loadState(){
+ try{
+  const raw=localStorage.getItem(STORAGE_KEY);
+  if(!raw)return structuredDefault();
+  const data=JSON.parse(raw);
+  if(!data||data.version!==1||typeof data.points!=="number")return structuredDefault();
+  return {...structuredDefault(),...data,
+   daily:{...DEFAULT_STATE.daily,...(data.daily||{})},
+   completed:{...(data.completed||{})},
+   badges:Array.isArray(data.badges)?data.badges:[],
+   history:Array.isArray(data.history)?data.history:[]
+  };
+ }catch(e){return structuredDefault()}
+}
+function structuredDefault(){return JSON.parse(JSON.stringify(DEFAULT_STATE))}
+function save(){
+ try{
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
+  return true;
+ }catch(e){
+  toast("Penyimpanan penuh. Hapus riwayat atau reset data di Profil.");
+  return false;
+ }
+}
+function today(){
+ const d=new Date();
+ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function shuffle(arr){
+ const a=[...arr];
+ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+ return a;
+}
+function toast(message){
+ const el=document.getElementById("toast");
+ el.textContent=message;el.classList.remove("hidden");
+ clearTimeout(toastId);
+ toastId=setTimeout(()=>el.classList.add("hidden"),2600);
+}
+function sound(frequency=550,duration=.09){
+ if(!state.sound)return;
+ try{
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC)return;
+  if(!audioContext)audioContext=new AC();
+  if(audioContext.state==="suspended")audioContext.resume();
+  const osc=audioContext.createOscillator(),gain=audioContext.createGain();
+  osc.frequency.value=frequency;osc.type="sine";
+  gain.gain.setValueAtTime(.06,audioContext.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+duration);
+  osc.connect(gain);gain.connect(audioContext.destination);
+  osc.start();osc.stop(audioContext.currentTime+duration);
+ }catch(e){}
+}
+function award(points){
+ state.points+=points;
+ state.best=Math.max(state.best,state.points);
+ state.level=Math.floor(state.points/100)+1;
+ save();
+}
+function dailyReset(){
+ const t=today();
+ if(state.dailyDate!==t){
+  state.daily={vocab:0,grammar:0,reading:0};
+  state.dailyDate=t;
+  save();
+ }
+}
+function updateDaily(kind){
+ dailyReset();
+ if(kind==="vocab")state.daily.vocab=Math.min(5,state.daily.vocab+1);
+ if(kind==="grammar")state.daily.grammar=Math.min(3,state.daily.grammar+1);
+ if(kind==="reading")state.daily.reading=1;
+ save();
+ checkBadges();
+}
+function checkBadges(){
+ const earned=[];
+ if(state.points>=50)earned.push("Pemula Hebat");
+ if(state.points>=200)earned.push("Pemburu Bintang");
+ if(state.points>=500)earned.push("Jago Bahasa");
+ if(state.streak>=3)earned.push("Konsisten 3 Hari");
+ if(state.daily.vocab>=5&&state.daily.grammar>=3&&state.daily.reading>=1)earned.push("Misi Harian Selesai");
+ earned.forEach(b=>{if(!state.badges.includes(b)){state.badges.push(b);toast("Lencana baru: "+b+" 🏅")}});
+ save();
+}
+function recordGame(name,score){
+ state.history.unshift({name,score,date:today()});
+ state.history=state.history.slice(0,20);
+ save();
+}
+function updateStreak(){
+ const t=today();
+ if(state.lastDay===t)return;
+ const previous=new Date(Date.now()-DAY);
+ const p=previous.getFullYear()+"-"+String(previous.getMonth()+1).padStart(2,"0")+"-"+String(previous.getDate()).padStart(2,"0");
+ state.streak=state.lastDay===p?state.streak+1:1;
+ state.lastDay=t;
+ save();
+}
+function setPage(next){
+ stopTimer();
+ mode=null;gameData=null;page=next;
+ document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===next));
+ render();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+function stopTimer(){
+ if(timerId!==null){clearInterval(timerId);timerId=null}
+}
+function setModal(html){
+ lastFocus=document.activeElement;
+ const modal=document.getElementById("modal");
+ document.getElementById("modalContent").innerHTML=html;
+ modal.classList.remove("hidden");
+ const first=modal.querySelector("button,input");
+ if(first)first.focus();
+}
+function closeModal(){
+ document.getElementById("modal").classList.add("hidden");
+ if(lastFocus&&lastFocus.focus)lastFocus.focus();
+}
+function speak(text){
+ try{
+  if(!("speechSynthesis" in window)){toast("Fitur suara tidak tersedia di browser ini.");return}
+  speechSynthesis.cancel();
+  const utter=new SpeechSynthesisUtterance(text);
+  utter.lang="en-US";utter.rate=.82;
+  speechSynthesis.speak(utter);
+ }catch(e){toast("Suara tidak dapat diputar di perangkat ini.")}
+}
+
+/* =========================================
+   NAVIGASI DAN HALAMAN
+========================================= */
+function render(){
+ const app=document.getElementById("app");
+ if(page==="home")app.innerHTML=homeHTML();
+ else if(page==="learn")app.innerHTML=learnHTML();
+ else if(page==="games")app.innerHTML=gamesHTML();
+ else if(page==="ranking")app.innerHTML=rankingHTML();
+ else if(page==="profile")app.innerHTML=profileHTML();
+ else if(page==="play")app.innerHTML=playHTML();
+ else app.innerHTML=homeHTML();
+ bindPage();
+}
+function homeHTML(){
+ dailyReset();
+ const done=state.daily.vocab+state.daily.grammar+state.daily.reading;
+ return `
+ <section class="hero">
+  <div>
+   <div class="eyebrow">PETUALANGAN DIMULAI</div>
+   <h2>Halo, ${escapeHTML(state.name)}! 👋</h2>
+   <p>Belajar Bahasa Inggris lewat permainan, cerita, dan tantangan seru. Kumpulkan bintang setiap kali kamu berlatih!</p>
+   <button class="btn" data-action="games">Ayo Bermain! →</button>
+  </div>
+  <div class="hero-art" aria-hidden="true">📚⭐</div>
+ </section>
+ <section class="stats">
+  <div class="stat"><strong>${state.points} ⭐</strong><span>Total poin</span></div>
+  <div class="stat"><strong>${state.streak} 🔥</strong><span>Streak harian</span></div>
+  <div class="stat"><strong>${state.level} 🎖️</strong><span>Level pemain</span></div>
+  <div class="stat"><strong>${state.badges.length} 🏅</strong><span>Lencana</span></div>
+ </section>
+ <div class="section-head"><div><h2>Misi hari ini</h2><p>Kerjakan sedikit demi sedikit.</p></div><span class="pill">${done}/9</span></div>
+ <div class="content-panel">
+  ${dailyLine("Vocabulary",state.daily.vocab,5,"🖼️")}
+  ${dailyLine("Grammar",state.daily.grammar,3,"⚔️")}
+  ${dailyLine("Reading",state.daily.reading,1,"📖")}
+  <div class="progress"><div class="progress-fill" style="width:${done/9*100}%"></div></div>
+  <button class="btn btn-blue" data-action="daily">Mulai Tantangan Harian</button>
+ </div>
+ <div class="section-head"><div><h2>Pilih petualangan</h2><p>Lima cara seru untuk berlatih.</p></div></div>
+ <div class="game-grid">${gameCards()}</div>`;
+}
+function dailyLine(name,value,total,icon){
+ return `<div style="display:flex;justify-content:space-between;gap:8px;padding:8px 0"><span>${icon} ${name}</span><strong>${value}/${total} ${value>=total?"✓":""}</strong></div>`;
+}
+function gameCards(){
+ const items=[
+ ["vocab","🖼️","Vocabulary Rush","Tebak kosakata dari gambar","10 detik per soal"],
+ ["grammar","⚔️","Grammar Quest","Kalahkan musuh dengan tata bahasa","Petualangan RPG"],
+ ["reading","📖","Reading Adventure","Baca cerita dan jawab pertanyaan","Latihan listening"],
+ ["builder","🔤","Word Builder","Susun huruf dan kalimat","Latihan menyusun kata"],
+ ["daily","🌟","Daily Challenge","Selesaikan misi harian","5 vocab · 3 grammar · 1 reading"]
+ ];
+ return items.map(x=>`<button class="game-card" data-game="${x[0]}"><span class="game-icon">${x[1]}</span><span><strong>${x[2]}</strong><small>${x[3]}</small><span class="tag">${x[4]}</span></span></button>`).join("");
+}
+function gamesHTML(){
+ return `<button class="back-btn" data-action="home">← Kembali ke beranda</button>
+ <h2 class="page-title">Pilih permainan 🎮</h2>
+ <p class="subtext">Setiap permainan dimulai dengan materi singkat sebelum kamu menjawab soal.</p>
+ <div class="game-grid">${gameCards()}</div>`;
+}
+function learnHTML(){
+ return `<h2 class="page-title">Ruang Belajar 📚</h2>
+ <p class="subtext">Pelajari konsep dasarnya, kemudian coba permainannya.</p>
+ <div class="game-grid">
+ ${[
+ ["vocab","🖼️","Kosakata","Kenali warna, angka, hewan, benda rumah, dan sekolah."],
+ ["grammar","⚔️","Tata Bahasa","Pelajari To Be, Simple Present, Simple Past, Plural, dan Preposition."],
+ ["reading","📖","Membaca","Latih pemahaman bacaan sederhana dan listening."],
+ ["builder","🔤","Menyusun Kata","Belajar ejaan dan susunan kalimat."]
+ ].map(x=>`<button class="game-card" data-learn="${x[0]}"><span class="game-icon">${x[1]}</span><span><strong>${x[2]}</strong><small>${x[3]}</small></span></button>`).join("")}
+ </div>
+ <div class="section-head"><div><h2>Catatan penting</h2><p>Ingat rumus sederhana ini.</p></div></div>
+ <div class="content-panel">
+ <h3>To Be</h3><p>I am · You are · He/She/It is · We/They are</p>
+ <h3>Simple Present</h3><p>I play. / She plays. Gunakan -s atau -es untuk he, she, it.</p>
+ <h3>Simple Past</h3><p>I played. / She went. Untuk kejadian yang sudah berlalu.</p>
+ <h3>Plural</h3><p>Book → Books. Child → Children.</p>
+ <h3>Preposition</h3><p>In = di dalam · On = di atas · Under = di bawah · Between = di antara.</p>
+ </div>`;
+}
+function rankingHTML(){
+ const history=[...state.history].sort((a,b)=>b.score-a.score);
+ return `<h2 class="page-title">Papan Peringkat 🏆</h2>
+ <p class="subtext">Peringkat lokal berdasarkan hasil permainan di perangkat ini.</p>
+ <div class="content-panel">
+ <div class="profile-box"><div class="avatar">🏆</div><div><h2 style="margin:0">${escapeHTML(state.name)}</h2><strong>${state.points} poin</strong><p class="subtext">Level ${state.level} · ${state.badges.length} lencana</p></div></div>
+ <div class="section-head"><div><h2>Rekor permainan</h2><p>Hasil terbaik muncul di urutan atas.</p></div></div>
+ ${history.length?`<div style="overflow-x:auto"><table class="table"><thead><tr><th>Urutan</th><th>Permainan</th><th>Poin</th><th>Tanggal</th></tr></thead><tbody>${history.sort((a,b)=>b.score-a.score).map((x,i)=>`<tr><td>${i+1}</td><td>${escapeHTML(x.name)}</td><td>${x.score}</td><td>${escapeHTML(x.date)}</td></tr>`).join("")}</tbody></table></div>`:`<div class="empty">🏅<br>Belum ada rekor permainan.<br>Mulai bermain untuk mengisi papan peringkatmu!</div>`}
+ </div>
+ <p class="notice">Catatan: peringkat ini hanya menyimpan skor di perangkat yang sedang digunakan. Belum ada peringkat online antarperangkat.</p>`;
+}
+function profileHTML(){
+ return `<h2 class="page-title">Profil Pemain 👤</h2>
+ <p class="subtext">Atur identitas dan lihat pencapaian belajarmu.</p>
+ <div class="content-panel">
+ <div class="profile-box"><div class="avatar">🧑‍🎓</div><div><h2 style="margin:0">${escapeHTML(state.name)}</h2><p class="subtext">Petualang Bahasa Inggris · Level ${state.level}</p></div></div>
+ <label class="field-label" for="playerName">Nama pemain</label>
+ <input class="field" id="playerName" maxlength="24" autocomplete="nickname" value="${escapeHTML(state.name)}" placeholder="Nama panggilan">
+ <button class="btn btn-blue" data-action="saveName">Simpan Nama</button>
+ <div class="section-head"><div><h2>Pencapaian</h2><p>Lencana yang sudah kamu kumpulkan.</p></div></div>
+ <div class="badges">${[
+ ["⭐","Pemula Hebat"],["🌟","Pemburu Bintang"],["👑","Jago Bahasa"],["🔥","Konsisten 3 Hari"],["🎯","Misi Harian Selesai"]
+ ].map(x=>`<div class="badge-item"><span>${state.badges.includes(x[1])?x[0]:"🔒"}</span><small>${x[1]}</small></div>`).join("")}</div>
+ <div class="section-head"><div><h2>Data permainan</h2><p>Data tersimpan otomatis di perangkat ini.</p></div></div>
+ <p>⭐ Total poin: <strong>${state.points}</strong></p>
+ <p>🏅 Jumlah lencana: <strong>${state.badges.length}</strong></p>
+ <p>🔥 Streak: <strong>${state.streak} hari</strong></p>
+ <div class="actions"><button class="btn btn-red" data-action="reset">Reset Semua Data</button></div>
+ </div>`;
+}
+function bindPage(){
+ document.querySelectorAll("[data-action]").forEach(b=>b.addEventListener("click",()=>action(b.dataset.action)));
+ document.querySelectorAll("[data-game]").forEach(b=>b.addEventListener("click",()=>startGame(b.dataset.game)));
+ document.querySelectorAll("[data-learn]").forEach(b=>b.addEventListener("click",()=>showLesson(b.dataset.learn)));
+}
+function action(a){
+ if(a==="home")setPage("home");
+ if(a==="games")setPage("games");
+ if(a==="daily")startGame("daily");
+ if(a==="saveName"){
+  const val=document.getElementById("playerName").value.trim();
+  if(!val){toast("Nama tidak boleh kosong.");return}
+  state.name=val;save();toast("Nama pemain berhasil disimpan!");render();
+ }
+ if(a==="reset")setModal(`<h2 id="modalTitle">Hapus semua progres?</h2><p>Semua poin, streak, lencana, nama, dan riwayat permainan akan dihapus dari perangkat ini.</p><div class="actions"><button class="btn btn-red" id="confirmReset">Ya, hapus semuanya</button><button class="btn btn-light" data-close>Batal</button></div>`);
+}
+function startGame(id){
+ stopTimer();mode=id;gameData={score:0,correct:0,wrong:0,index:0,answers:[],time:10,round:0,selected:[],stage:"lesson"};
+ page="play";render();
+}
+function showLesson(id){
+ const map={
+ vocab:["Vocabulary Rush","Belajar kosakata","Perhatikan gambar, lalu pilih kata Bahasa Inggris yang benar. Contoh: 🐱 = Cat = Kucing. Ada lima kategori kosakata: warna, angka, hewan, benda di rumah, dan sekolah.","🖼️"],
+ grammar:["Grammar Quest","Belajar tata bahasa","Perhatikan subjek dan waktu kejadian. I am, She is, They are. Untuk Simple Present gunakan -s/-es pada he/she/it. Simple Past memakai bentuk lampau. Plural berarti jamak, sedangkan preposition menunjukkan posisi.","⚔️"],
+ reading:["Reading Adventure","Belajar membaca","Baca cerita dengan teliti. Cari informasi tentang siapa, apa, kapan, di mana, dan bagaimana. Tekan tombol suara untuk mendengarkan pelafalan kalimat Bahasa Inggris.","📖"],
+ builder:["Word Builder","Belajar menyusun kata","Susun huruf menjadi kosakata yang benar. Setelah itu, susun kata-kata acak menjadi kalimat Bahasa Inggris yang tepat. Perhatikan huruf kapital dan urutan subjek-kata kerja-objek.","🔤"]
+ };
+ const m=map[id];
+ setModal(`<h2 id="modalTitle">${m[3]} ${m[0]}</h2><p class="eyebrow" style="color:var(--blue)">MATERI 1 MENIT</p><h3>${m[1]}</h3><p>${m[2]}</p><div class="actions"><button class="btn btn-blue" id="lessonPlay">Mulai Latihan</button><button class="btn btn-light" data-close>Tutup</button></div>`);
+ document.getElementById("lessonPlay").onclick=()=>{closeModal();startGame(id)};
+}
+
+/* =========================================
+   MATERI DAN LAYAR PERMAINAN
+========================================= */
+function lessonHTML(id){
+ const content={
+ vocab:["🖼️ Vocabulary Rush","Kamu akan melihat gambar. Pilih kata yang sesuai dalam 10 detik. Setiap jawaban benar mendapatkan 10 poin. Salah menjawab mengurangi satu nyawa.","Contoh: 🐶 = DOG (Anjing)."],
+ grammar:["⚔️ Grammar Quest","Kamu adalah penjaga kerajaan kata. Setiap musuh membawa satu soal grammar. Jawaban benar memberi serangan dan poin. Tiga kesalahan mengakhiri petualangan.","Pelajari subjek, kata kerja, waktu, bentuk jamak, dan posisi benda."],
+ reading:["📖 Reading Adventure","Baca cerita pendek dalam Bahasa Inggris. Jawab tiga pertanyaan tentang isi cerita. Tekan ikon 🔊 untuk mendengarkan cerita.","Setiap jawaban benar mendapatkan 10 poin."],
+ builder:["🔤 Word Builder","Susun huruf acak menjadi kosakata yang tepat. Setelah itu, susun kata acak menjadi kalimat Bahasa Inggris.","Jawaban benar menghasilkan poin dan bintang."],
+ daily:["🌟 Daily Challenge","Selesaikan lima soal kosakata, tiga soal grammar, dan satu cerita reading. Setiap bagian memiliki materi singkat sebelum permainan dimulai.","Selesaikan semuanya untuk mendapatkan bonus 50 poin."]
+ };
+ const c=content[id];
+ return `<button class="back-btn" data-action="home">← Keluar</button>
+ <div class="content-panel"><div class="eyebrow" style="color:var(--blue)">PERSIAPAN MISI</div>
+ <h2 class="page-title">${c[0]}</h2><p>${c[1]}</p>
+ <div class="lesson"><h3>📌 Ingat ini!</h3><p>${c[2]}</p></div>
+ <button class="btn btn-blue" id="beginGame">Saya Siap Bermain →</button>
+ </div>`;
+}
+function playHTML(){
+ if(!gameData)return `<div class="empty">Permainan belum dimulai.</div>`;
+ if(gameData.stage==="lesson")return lessonHTML(mode);
+ if(gameData.stage==="result")return resultHTML();
+ if(mode==="vocab")return vocabHTML();
+ if(mode==="grammar")return grammarHTML();
+ if(mode==="reading")return readingHTML();
+ if(mode==="builder")return builderHTML();
+ if(mode==="daily")return dailyHTML();
+ return `<div class="empty">Mode tidak ditemukan.</div>`;
+}
+function bindPlay(){
+ const begin=document.getElementById("beginGame");
+ if(begin)begin.onclick=beginMode;
+ document.querySelectorAll("[data-answer]").forEach(b=>b.addEventListener("click",()=>answer(Number(b.dataset.answer))));
+ const speakBtn=document.getElementById("speakStory");
+ if(speakBtn)speakBtn.onclick=()=>speak(gameData.story.text);
+ const check=document.getElementById("checkBuild");
+ if(check)check.onclick=checkBuilder;
+ const clear=document.getElementById("clearBuild");
+ if(clear)clear.onclick=()=>{gameData.selected=[];render()};
+ const next=document.getElementById("nextRound");
+ if(next)next.onclick=nextBuilderRound;
+ const dailyNext=document.getElementById("dailyNext");
+ if(dailyNext)dailyNext.onclick=nextDaily;
+ const retry=document.getElementById("retryGame");
+ if(retry)retry.onclick=()=>startGame(mode);
+ const exit=document.getElementById("exitGame");
+ if(exit)exit.onclick=()=>setPage("games");
+ document.querySelectorAll("[data-letter]").forEach(b=>b.addEventListener("click",()=>selectLetter(Number(b.dataset.letter))));
+ document.querySelectorAll("[data-word]").forEach(b=>b.addEventListener("click",()=>selectWord(Number(b.dataset.word))));
+}
+function beginMode(){
+ gameData.stage="playing";
+ if(mode==="vocab")initVocab();
+ else if(mode==="grammar")initGrammar();
+ else if(mode==="reading")initReading();
+ else if(mode==="builder")initBuilder();
+ else if(mode==="daily")initDaily();
+ render();
+}
+function progressHTML(index,total){
+ return `<div class="progress"><div class="progress-fill" style="width:${Math.min(100,index/total*100)}%"></div></div>`;
+}
+function vocabPool(){
+ return VOCAB.flatMap(c=>c.items.map(item=>({...{emoji:item[0],word:item[1],meaning:item[2]},category:c.category})));
+}
+function initVocab(){
+ const pool=shuffle(vocabPool());
+ gameData.questions=pool.slice(0,10);
+ gameData.index=0;gameData.hearts=5;gameData.time=10;
+ vocabQuestion();
+}
+function vocabQuestion(){
+ if(gameData.index>=gameData.questions.length||gameData.hearts<=0){finishGame();return}
+ stopTimer();
+ const q=gameData.questions[gameData.index];
+ const wrong=shuffle(vocabPool().filter(x=>x.word!==q.word)).slice(0,3);
+ gameData.currentOptions=shuffle([q,...wrong]);
+ gameData.time=10;
+ render();
+ const timer=document.getElementById("timer");
+ timerId=setInterval(()=>{
+  gameData.time--;
+  if(timer)timer.textContent=gameData.time+" detik";
+  if(gameData.time<=0){stopTimer();gameData.hearts--;gameData.wrong++;toast("Waktu habis! Jawabannya "+q.word);gameData.index++;setTimeout(vocabQuestion,650)}
+ },1000);
+}
+function vocabHTML(){
+ const q=gameData.questions[gameData.index];
+ return `<div class="quiz-top"><span class="pill">🖼️ ${q.category}</span><span class="pill">❤️ ${gameData.hearts}</span><span class="timer" id="timer">${gameData.time} detik</span></div>
+ ${progressHTML(gameData.index,gameData.questions.length)}
+ <p class="subtext">Soal ${gameData.index+1} dari ${gameData.questions.length}</p>
+ <div class="question-visual" aria-label="${q.category}">${q.emoji}</div>
+ <h2 class="question">Apa Bahasa Inggrisnya?</h2>
+ <div class="options">${gameData.currentOptions.map((x,i)=>`<button class="option" data-answer="${i}">${x.word}</button>`).join("")}</div>
+ <p class="subtext" style="text-align:center">Pilih jawaban sebelum waktu habis.</p>
+ <button class="btn btn-light" data-action="home">Keluar permainan</button>`;
+}
+function initGrammar(){
+ const questions=shuffle(GRAMMAR).slice(0,10);
+ gameData.questions=questions;gameData.index=0;gameData.hearts=3;
+ grammarQuestion();
+}
+function grammarQuestion(){
+ if(gameData.index>=gameData.questions.length||gameData.hearts<=0){finishGame();return}
+ gameData.current=gameData.questions[gameData.index];
+ render();
+}
+function grammarHTML(){
+ const q=gameData.current;
+ return `<div class="quiz-top"><span class="pill">⚔️ Musuh ${gameData.index+1}/10</span><span class="pill">❤️ ${gameData.hearts}</span><span class="pill">⭐ ${gameData.score}</span></div>
+ ${progressHTML(gameData.index,10)}
+ <div class="question-visual">👾</div>
+ <div class="notice" style="text-align:center">Musuh dari Kerajaan Grammar menyerang!</div>
+ <span class="tag">${q.topic}</span>
+ <h2 class="question">${q.q}</h2>
+ <div class="options">${q.a.map((x,i)=>`<button class="option" data-answer="${i}">${x}</button>`).join("")}</div>
+ <div id="explain"></div>
+ <button class="btn btn-light" data-action="home">Keluar permainan</button>`;
+}
+function initReading(){
+ gameData.story=STORIES[Math.floor(Math.random()*STORIES.length)];
+ gameData.index=0;gameData.correct=0;
+ render();
+}
+function readingHTML(){
+ const s=gameData.story;
+ const q=s.questions[gameData.index];
+ return `<div class="quiz-top"><span class="pill">📖 ${s.title}</span><span class="pill">Pertanyaan ${gameData.index+1}/3</span></div>
+ ${progressHTML(gameData.index,3)}
+ ${gameData.index===0?`<div class="reading">${s.text}</div><div class="actions"><button class="btn btn-light" id="speakStory">🔊 Dengarkan Cerita</button></div>`:""}
+ <h2 class="question">${q.q}</h2>
+ <div class="options">${q.a.map((x,i)=>`<button class="option" data-answer="${i}">${x}</button>`).join("")}</div>
+ <div id="explain"></div>`;
+}
+function initBuilder(){
+ gameData.round=0;gameData.builderType="word";gameData.selected=[];
+ gameData.wordQuestions=shuffle(WORDS).slice(0,4);
+ gameData.sentenceQuestions=shuffle(SENTENCES).slice(0,3);
+ builderQuestion();
+}
+function builderQuestion(){
+ gameData.selected=[];
+ gameData.stage="playing";
+ if(gameData.round>=7){finishGame();return}
+ gameData.builderType=gameData.round<4?"word":"sentence";
+ const q=gameData.builderType==="word"?gameData.wordQuestions[gameData.round]:gameData.sentenceQuestions[gameData.round-4];
+ gameData.current=q;
+ gameData.letters=shuffle(gameData.builderType==="word"?q.word.split(""):q.scramble.map((w,i)=>({w,i})));
+ render();
+}
+function builderHTML(){
+ const word=gameData.builderType==="word";
+ const q=gameData.current;
+ return `<div class="quiz-top"><span class="pill">🔤 ${word?"Susun huruf":"Susun kalimat"}</span><span class="pill">${gameData.round+1}/7</span></div>
+ ${progressHTML(gameData.round,7)}
+ <h2 class="question">${word?"Tebak kata dari petunjuk":"Susun kata menjadi kalimat"}</h2>
+ <div class="notice" style="text-align:center">${word?q.hint:"Susun kata-kata berikut agar menjadi kalimat yang benar."}</div>
+ <div class="word-row">${gameData.selected.map((x,i)=>`<button class="word-chip" data-word="${i}">${typeof x==="string"?x:x.w}</button>`).join("")||"<span class='subtext'>Pilihanmu akan muncul di sini.</span>"}</div>
+ <div class="letter-row">${gameData.letters.map((x,i)=>`<button class="letter" data-letter="${i}" ${gameData.selected.includes(x)?"disabled":""}>${typeof x==="string"?x:x.w}</button>`).join("")}</div>
+ <div id="explain"></div>
+ <div class="actions"><button class="btn btn-blue" id="checkBuild">Periksa Jawaban</button><button class="btn btn-light" id="clearBuild">Ulangi Susunan</button></div>`;
+}
+function selectLetter(index){
+ const x=gameData.letters[index];
+ if(gameData.selected.includes(x))return;
+ gameData.selected.push(x);sound(650);
+ render();
+}
+function selectWord(index){
+ gameData.selected.splice(index,1);render();
+}
+function checkBuilder(){
+ const word=gameData.builderType==="word";
+ const answer=word?gameData.current.word:gameData.current.answer.join(" ");
+ const attempt=gameData.selected.map(x=>typeof x==="string"?x:x.w).join(word?"":" ");
+ if(!gameData.selected.length){toast("Pilih huruf atau kata terlebih dahulu.");return}
+ if(attempt.toLowerCase()===answer.toLowerCase()){
+  gameData.score+=15;gameData.correct++;sound(780);
+  const meaning=word?gameData.current.meaning:gameData.current.meaning;
+  document.getElementById("explain").innerHTML=`<div class="feedback good">Benar! 🎉 ${escapeHTML(answer)}<br><small>${escapeHTML(meaning)}</small></div><button class="btn btn-green" id="nextRound">Lanjut →</button>`;
+ }else{
+  gameData.wrong++;sound(180);
+  document.getElementById("explain").innerHTML=`<div class="feedback bad">Belum tepat. Coba susun kembali huruf atau katanya.</div>`;
+ }
+ const check=document.getElementById("checkBuild");
+ if(check)check.disabled=true;
+}
+function nextBuilderRound(){gameData.round++;builderQuestion()}
+
+/* =========================================
+   JAWABAN DAN HASIL
+========================================= */
+function answer(index){
+ if(gameData.locked)return;
+ const q=mode==="vocab"?gameData.currentOptions[index]:
+  mode==="grammar"?gameData.current:
+  mode==="reading"?gameData.story.questions[gameData.index]:null;
+ if(!q)return;
+ gameData.locked=true;
+ const correct=mode==="vocab"?gameData.currentOptions[index].word===gameData.questions[gameData.index].word:index===q.correct;
+ const buttons=[...document.querySelectorAll("[data-answer]")];
+ buttons.forEach((b,i)=>{
+  b.disabled=true;
+  if(i===q.correct||mode==="vocab"&&gameData.currentOptions[i].word===gameData.questions[gameData.index].word)b.classList.add("correct");
+  if(i===index&&!correct)b.classList.add("wrong");
+ });
+ if(correct){
+  gameData.correct++;gameData.score+=10;gameData.locked=false;
+  sound(760);navigator.vibrate?.(30);
+  if(mode==="daily")dailyQuestionCorrect();
+ }else{
+  gameData.wrong++;sound(180);
+  if(mode==="vocab"||mode==="grammar")gameData.hearts--;
+ }
+ const feedback=document.getElementById("explain");
+ if(mode==="vocab"){
+  if(correct)feedback.innerHTML=`<div class="feedback good">Benar! ${gameData.questions[gameData.index].word} = ${gameData.questions[gameData.index].meaning} 🎉</div>`;
+  else feedback.innerHTML=`<div class="feedback bad">Belum tepat. Jawaban: ${gameData.questions[gameData.index].word}.</div>`;
+  stopTimer();
+  setTimeout(()=>{gameData.index++;gameData.locked=false;vocabQuestion()},correct?750:1000);
+ }else if(mode==="grammar"){
+  feedback.innerHTML=`<div class="feedback ${correct?"good":"bad"}">${correct?"Serangan berhasil! ⚔️":"Serangan gagal! ❤️"}<br>${escapeHTML(q.why)}</div><button class="btn btn-blue" id="grammarNext">Lanjutkan Pertarungan →</button>`;
+  document.getElementById("grammarNext").onclick=()=>{gameData.index++;gameData.locked=false;grammarQuestion()};
+ }else if(mode==="reading"){
+  feedback.innerHTML=`<div class="feedback ${correct?"good":"bad"}">${correct?"Jawaban benar! ⭐":"Belum tepat."}<br>${escapeHTML(q.why)}</div><button class="btn btn-blue" id="readingNext">Pertanyaan Berikutnya →</button>`;
+  document.getElementById("readingNext").onclick=()=>{
+   gameData.index++;gameData.locked=false;
+   if(gameData.index>=3)finishGame();else render();
+  };
+ }
+ if(mode==="daily")showDailyFeedback(correct,q);
+}
+function finishGame(){
+ stopTimer();
+ gameData.stage="result";
+ const base=gameData.score||gameData.correct*10;
+ const bonus=gameData.correct>=5?10:0;
+ const earned=base+bonus;
+ gameData.finalScore=earned;
+ award(earned);
+ const label={vocab:"Vocabulary Rush",grammar:"Grammar Quest",reading:"Reading Adventure",builder:"Word Builder",daily:"Daily Challenge"}[mode];
+ recordGame(label,earned);
+ if(gameData.correct>0)updateStreak();
+ if(mode==="vocab")updateDaily("vocab");
+ if(mode==="grammar")updateDaily("grammar");
+ if(mode==="reading")updateDaily("reading");
+ checkBadges();render();
+}
+function resultHTML(){
+ const win=gameData.correct>0;
+ return `<div class="content-panel" style="text-align:center">
+ <div style="font-size:76px">${win?"🏆":"💪"}</div>
+ <div class="eyebrow" style="color:var(--blue)">HASIL PETUALANGAN</div>
+ <h2 class="page-title">${win?"Kerja bagus!":"Tetap semangat!"}</h2>
+ <p class="subtext">${win?"Kamu sudah menyelesaikan latihan. Terus berlatih agar semakin mahir.":"Jangan menyerah. Coba lagi dan pelajari jawabannya."}</p>
+ <div class="stats">
+ <div class="stat"><strong>${gameData.finalScore||0}</strong><span>Poin didapat</span></div>
+ <div class="stat"><strong>${gameData.correct}</strong><span>Jawaban benar</span></div>
+ <div class="stat"><strong>${gameData.wrong}</strong><span>Jawaban salah</span></div>
+ <div class="stat"><strong>${state.level}</strong><span>Level sekarang</span></div>
+ </div>
+ <div class="actions" style="justify-content:center">
+ <button class="btn btn-blue" id="retryGame">Main Lagi</button>
+ <button class="btn btn-light" id="exitGame">Kembali ke Menu</button>
+ </div></div>`;
+}
+
+/* =========================================
+   TANTANGAN HARIAN
+========================================= */
+function initDaily(){
+ dailyReset();
+ gameData.dailyStage="vocab";
+ gameData.dailyCount=0;
+ gameData.score=0;gameData.correct=0;gameData.wrong=0;
+ gameData.questions=shuffle(vocabPool()).slice(0,5);
+ gameData.index=0;
+ dailyQuestion();
+}
+function dailyHTML(){
+ if(gameData.dailyStage==="vocab"){
+  const q=gameData.questions[gameData.index];
+  return `<div class="quiz-top"><span class="pill">🌟 Misi 1: Vocabulary</span><span class="pill">${gameData.index+1}/5</span></div>
+  ${progressHTML(gameData.index,5)}<div class="question-visual">${q.emoji}</div>
+  <h2 class="question">Pilih kata yang tepat</h2>
+  <div class="options">${gameData.currentOptions.map((x,i)=>`<button class="option" data-answer="${i}">${x.word}</button>`).join("")}</div><div id="explain"></div>`;
+ }
+ if(gameData.dailyStage==="grammar"){
+  const q=gameData.current;
+  return `<div class="quiz-top"><span class="pill">🌟 Misi 2: Grammar</span><span class="pill">${gameData.index+1}/3</span></div>
+  ${progressHTML(gameData.index,3)}<h2 class="question">${q.q}</h2>
+  <div class="options">${q.a.map((x,i)=>`<button class="option" data-answer="${i}">${x}</button>`).join("")}</div><div id="explain"></div>`;
+ }
+ if(gameData.dailyStage==="reading"){
+  const s=gameData.story;const q=s.questions[gameData.index];
+  return `<div class="quiz-top"><span class="pill">🌟 Misi 3: Reading</span><span class="pill">${gameData.index+1}/3</span></div>
+  ${progressHTML(gameData.index,3)}
+  ${gameData.index===0?`<div class="reading">${s.text}</div><button class="btn btn-light" id="speakStory">🔊 Dengarkan</button>`:""}
+  <h2 class="question">${q.q}</h2>
+  <div class="options">${q.a.map((x,i)=>`<button class="option" data-answer="${i}">${x}</button>`).join("")}</div><div id="explain"></div>`;
+ }
+ return `<div class="empty">Menyiapkan misi berikutnya...</div>`;
+}
+function dailyQuestion(){
+ gameData.locked=false;
+ if(gameData.dailyStage==="vocab"){
+  if(gameData.index>=5){gameData.dailyStage="grammar";gameData.index=0;dailyGrammar();return}
+  const q=gameData.questions[gameData.index];
+  gameData.currentOptions=shuffle([q,...shuffle(vocabPool().filter(x=>x.word!==q.word)).slice(0,3)]);
+ }else if(gameData.dailyStage==="grammar"){
+  if(gameData.index>=3){gameData.dailyStage="reading";gameData.index=0;gameData.story=STORIES[Math.floor(Math.random()*STORIES.length)];render();return}
+  gameData.current=shuffle(GRAMMAR)[0];
+ }else if(gameData.dailyStage==="reading"){
+  if(gameData.index>=3){finishDaily();return}
+ }
+ render();
+}
+function dailyGrammar(){gameData.dailyGrammar=shuffle(GRAMMAR).slice(0,3);gameData.current=gameData.dailyGrammar[0];render()}
+function dailyQuestionCorrect(){gameData.dailyCount++}
+function showDailyFeedback(correct,q){
+ const f=document.getElementById("explain");
+ if(!f)return;
+ let why=mode==="daily"?(gameData.dailyStage==="vocab"?"Kosakata benar!":gameData.dailyStage==="grammar"?q.why:q.why):"";
+ f.innerHTML=`<div class="feedback ${correct?"good":"bad"}">${correct?"Bagus! ⭐":"Coba ingat lagi."}<br>${escapeHTML(why)}</div><button class="btn btn-blue" id="dailyNext">Lanjut →</button>`;
+}
+function nextDaily(){
+ gameData.index++;
+ gameData.locked=false;
+ if(gameData.dailyStage==="grammar"&&gameData.index<3)gameData.current=gameData.dailyGrammar[gameData.index];
+ dailyQuestion();
+}
+function finishDaily(){
+ gameData.score+=50;
+ gameData.correct+=0;
+ state.daily={vocab:5,grammar:3,reading:1};
+ state.dailyDate=today();
+ gameData.dailyStage="done";
+ gameData.stage="result";
+ award(gameData.score);
+ recordGame("Daily Challenge",gameData.score);
+ updateStreak();checkBadges();render();
+}
+
+/* =========================================
+   KONTROL, ONBOARDING, DAN PEMBERSIHAN
+========================================= */
+document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",()=>setPage(b.dataset.page)));
+document.getElementById("soundBtn").addEventListener("click",()=>{
+ state.sound=!state.sound;save();
+ document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";
+ if(state.sound)sound();
+});
+document.getElementById("helpBtn").addEventListener("click",showHelp);
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+document.addEventListener("click",e=>{
+ if(e.target.closest("[data-close]"))closeModal();
+});
+function showHelp(){
+ setModal(`<h2 id="modalTitle">Cara bermain 📚</h2>
+ <ol class="onboard-list">
+ <li>Pilih permainan dari menu Belajar atau Main Game.</li>
+ <li>Baca materi singkat sebelum memulai soal.</li>
+ <li>Jawab pertanyaan dan kumpulkan poin serta lencana.</li>
+ <li>Selesaikan misi harian untuk membangun streak.</li>
+ <li>Progres akan tersimpan otomatis di perangkatmu.</li>
+ </ol>
+ <p class="notice">Tips: gunakan tombol 🔊 untuk mendengarkan cerita Bahasa Inggris pada Reading Adventure.</p>
+ <button class="btn btn-blue" data-close>Siap, mengerti!</button>`);
+}
+function showOnboarding(){
+ if(state.onboarded)return;
+ setModal(`<h2 id="modalTitle">Selamat datang di English Quest! ⭐</h2>
+ <p>Di sini kamu bisa belajar Bahasa Inggris melalui lima permainan.</p>
+ <ol class="onboard-list">
+ <li>📚 Pelajari materi singkat terlebih dahulu.</li>
+ <li>🎮 Jawab soal untuk mengumpulkan bintang.</li>
+ <li>🏆 Selesaikan misi harian dan kumpulkan lencana.</li>
+ </ol>
+ <button class="btn btn-blue" id="startOnboarding">Ayo Mulai!</button>
+ <button class="btn btn-light" id="skipOnboarding">Lewati</button>`);
+ document.getElementById("startOnboarding").onclick=finishOnboarding;
+ document.getElementById("skipOnboarding").onclick=finishOnboarding;
+}
+function finishOnboarding(){
+ state.onboarded=true;save();closeModal();toast("Selamat belajar, "+state.name+"! ⭐");
+}
+function globalRender(){
+ render();
+ document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";
+}
+function render(){
+ const app=document.getElementById("app");
+ if(page==="home")app.innerHTML=homeHTML();
+ else if(page==="learn")app.innerHTML=learnHTML();
+ else if(page==="games")app.innerHTML=gamesHTML();
+ else if(page==="ranking")app.innerHTML=rankingHTML();
+ else if(page==="profile")app.innerHTML=profileHTML();
+ else if(page==="play")app.innerHTML=playHTML();
+ else app.innerHTML=homeHTML();
+ bindPage();
+ if(page==="play")bindPlay();
+}
+function startGame(id){
+ stopTimer();
+ mode=id;gameData={
+ score:0,correct:0,wrong:0,index:0,answers:[],time:10,
+ round:0,selected:[],stage:"lesson",locked:false
+ };
+ page="play";
+ document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",false));
+ render();window.scrollTo(0,0);
+}
+function beginMode(){
+ gameData.stage="playing";
+ if(mode==="vocab")initVocab();
+ else if(mode==="grammar")initGrammar();
+ else if(mode==="reading")initReading();
+ else if(mode==="builder")initBuilder();
+ else if(mode==="daily")initDaily();
+}
+function cleanup(){
+ stopTimer();
+ if(window.speechSynthesis)window.speechSynthesis.cancel();
+}
+window.addEventListener("blur",()=>{
+ if(mode&&gameData&&gameData.stage==="playing"&&mode==="vocab"){
+  stopTimer();toast("Waktu dihentikan sementara. Kembali ke permainan untuk melanjutkan.");
+ }
+});
+document.addEventListener("visibilitychange",()=>{
+ if(document.hidden){
+  stopTimer();
+  if(window.speechSynthesis)speechSynthesis.cancel();
+ }else if(mode&&gameData&&gameData.stage==="playing"&&mode==="vocab"){
+  vocabQuestion();
+ }
+});
+window.addEventListener("pagehide",cleanup);
+window.addEventListener("beforeunload",cleanup);
+
+/* Penanganan tombol kembali Android */
+try{
+ history.pushState({englishQuest:true},"","#english-quest");
+ window.addEventListener("popstate",()=>{
+  if(!document.getElementById("modal").classList.contains("hidden"))closeModal();
+  else if(page==="play"){cleanup();setPage("games")}
+  else if(page!=="home")setPage("home");
+  history.pushState({englishQuest:true},"","#english-quest");
+ });
+}catch(e){}
+
+/* Pemulihan tampilan ketika ukuran viewport berubah */
+let resizeTimeout=null;
+function handleResize(){
+ clearTimeout(resizeTimeout);
+ resizeTimeout=setTimeout(()=>{
+  const panel=document.querySelector(".content-panel");
+  if(panel)panel.style.maxWidth="100%";
+ },180);
+}
+window.addEventListener("resize",handleResize);
+if(window.visualViewport)window.visualViewport.addEventListener("resize",handleResize);
+
+/* Inisialisasi */
+try{
+ dailyReset();
+ render();
+ document.getElementById("soundBtn").textContent=state.sound?"🔊":"🔇";
+ showOnboarding();
+}catch(e){
+ document.getElementById("app").innerHTML=
+ `<div class="content-panel"><h2>Permainan belum dapat dibuka</h2>
+ <p>Terjadi kesalahan saat menyiapkan permainan. Muat ulang halaman. Jika masalah berlanjut, hapus data permainan melalui pengaturan browser.</p>
+ <button class="btn btn-blue" onclick="location.reload()">Muat Ulang</button></div>`;
+}
+</script>
+</body>
+</html>
